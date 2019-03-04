@@ -101,7 +101,7 @@ const MinMaxAlternative = array => {
 };
 
 
-/* sorting */
+/* sorting function */
 
 /* COmplexity O(n^2) */
 const BubbleSort = (arr) => {
@@ -124,7 +124,7 @@ const BubbleSort = (arr) => {
 }
 
 
-
+/* COmplexity O(nlogn) */
 const MergeSort = arr => {
     if (arr.length == 1) {
         return arr
@@ -154,4 +154,17 @@ const merge = (left , right) => {
     return result.concat(left.slice(lIndex)).concat(right.slice(rIndex))
 }
 
-console.log(MergeSort([-9,9,4,5,6,2,3,-1]));
+/* COmplexity O(n^2) */
+const SelectionSort = arr => {
+    for (let i = 0; i < arr.length; i++) {
+        let min = i
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[min] > arr[j]) {
+                min = j
+            }
+        }
+        [arr[min], arr[i]] = [arr[i], arr[min]]
+    }
+    return arr
+}
+
